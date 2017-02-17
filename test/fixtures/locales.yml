@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country_name: MyString
+  country_acronym: MyString
+  state_name: MyString
+  state_acronym: MyString
+  city_name: MyString
+  type: 
+  user: one
+
+two:
+  country_name: MyString
+  country_acronym: MyString
+  state_name: MyString
+  state_acronym: MyString
+  city_name: MyString
+  type: 
+  user: two
