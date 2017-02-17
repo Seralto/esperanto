@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.locales.build
   end
 
   def edit
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :birthdate, :gender, :email, :password, :password_confirmation, :level, :share_information)
+      params.require(:user).permit(:name, :birthdate, :gender, :email, :password, :password_confirmation, :level,
+        :share_information, locales_attributes: [:id, :country_acronym, :state_acronym, :city_name, :locale_type])
     end
 end

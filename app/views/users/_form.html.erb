@@ -35,7 +35,7 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  
+
   <div class="field">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
@@ -45,6 +45,23 @@
     <%= f.label :level %>
     <%= f.select :level, User.levels.keys.map { |level| [level.titleize, level] } %>
   </div>
+
+  <%= f.fields_for :locales do |l| %>
+    <div class="field">
+      <%= l.label :country %>
+      <%= l.select :country_acronym, CS.countries.map { |key, value| [value, key] }, { prompt: true }  %>
+    </div>
+
+    <div class="field">
+      <%= l.label :state %>
+      <%= l.select :state_acronym, CS.states(:br).map { |key, value| [value, key] }, { prompt: true }  %>
+    </div>
+
+    <div class="field">
+      <%= l.label :city %>
+      <%= l.select :city_name, CS.cities(:sp).map { |value| [value, value] }, { prompt: true }  %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :share_information %>

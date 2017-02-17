@@ -9,4 +9,7 @@ class User < ApplicationRecord
   enum gender: [:maskla, :ina, :alia]
   enum level:  [:baza, :meza, :progresinta, :flua]
 
+  has_many :locales
+
+  accepts_nested_attributes_for :locales, allow_destroy: true
 end
