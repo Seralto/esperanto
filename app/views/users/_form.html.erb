@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :gender %>
-    <%= f.select :gender, User.genders.keys.map { |gender| [gender.titleize, gender] } %>
+    <%= f.select :gender, User.genders.keys.map { |gender| [gender.titleize, gender] }, { prompt: true }, class: 'select2' %>
   </div>
 
   <div class="field">
@@ -43,23 +43,23 @@
 
   <div class="field">
     <%= f.label :level %>
-    <%= f.select :level, User.levels.keys.map { |level| [level.titleize, level] } %>
+    <%= f.select :level, User.levels.keys.map { |level| [level.titleize, level] }, { prompt: true }, class: 'select2' %>
   </div>
 
   <%= f.fields_for :locales do |l| %>
     <div class="field">
       <%= l.label :country %>
-      <%= l.select :country_acronym, CS.countries.map { |key, value| [value, key] }, { prompt: true }, class: 'country-select'  %>
+      <%= l.select :country_acronym, CS.countries.map { |key, value| [value, key] }, { prompt: true }, class: 'country-select select2'  %>
     </div>
 
     <div class="field state-box" style="<%='display: none' if l.object.state_acronym.nil? %>">
       <%= l.label :state %>
-      <%= l.select :state_acronym, CS.states(l.object.country_acronym).map { |key, value| [value, key] }, { prompt: true }, class: 'state-select'  %>
+      <%= l.select :state_acronym, CS.states(l.object.country_acronym).map { |key, value| [value, key] }, { prompt: true }, class: 'state-select select2'  %>
     </div>
 
     <div class="field city-box" style="<%='display: none' if l.object.city_name.nil? %>">
       <%= l.label :city %>
-      <%= l.select :city_name, CS.cities(l.object.state_acronym, l.object.country_acronym).map { |value| [value, value] }, { prompt: true }, class: 'city-select'  %>
+      <%= l.select :city_name, CS.cities(l.object.state_acronym, l.object.country_acronym).map { |value| [value, value] }, { prompt: true }, class: 'city-select select2'  %>
     </div>
   <% end %>
 

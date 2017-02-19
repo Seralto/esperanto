@@ -15,4 +15,6 @@
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-eo
 //= require turbolinks
+//= require select2
+//= require select2_locale_en
 //= require_tree .

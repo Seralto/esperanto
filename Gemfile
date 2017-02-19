@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'city-state'
 gem 'jquery-ui-rails'
+gem "select2-rails"
 
 group :development, :test do
   gem 'byebug', platform: :mri

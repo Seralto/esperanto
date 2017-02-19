@@ -8,7 +8,17 @@ $(document).on 'turbolinks:load', ->
     state = $(this).val()
     user.changeCity(country, state)
 
-  $('.datepicker').datepicker({ changeMonth: true, changeYear: true, yearRange: "-100:-5" });
+  $('.datepicker').datepicker({
+    changeMonth: true,
+    hangeYear: true,
+    yearRange: "-100:-5"
+  });
+
+  $(".dropdown").select2({
+      theme: "bootstrap"
+  });
+
+  user.initializeSelect2()
 
 user =
   changeState: (country) ->
@@ -20,6 +30,7 @@ user =
       for key, value of data
         stateSelect.append "<option value='#{key}'>#{value}</option>"
         $('.state-box').show()
+      stateSelect.focus()
 
   changeCity: (country, state) ->
     $.get "/locales?country=#{country}&state=#{state}", (data) ->
@@ -29,3 +40,9 @@ user =
       for _, value of data
         citySelect.append "<option value='#{value}'>#{value}</option>"
         $('.city-box').show()
+      citySelect.focus()
+
+  initializeSelect2: ->
+    $('.select2').select2
+      language: noResults: ->
+        return 'Neniu rezulto trovita'
