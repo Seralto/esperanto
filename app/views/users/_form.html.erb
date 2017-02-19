@@ -49,17 +49,17 @@
   <%= f.fields_for :locales do |l| %>
     <div class="field">
       <%= l.label :country %>
-      <%= l.select :country_acronym, CS.countries.map { |key, value| [value, key] }, { prompt: true }  %>
+      <%= l.select :country_acronym, CS.countries.map { |key, value| [value, key] }, { prompt: true }, class: 'country-select'  %>
     </div>
 
-    <div class="field">
+    <div class="field state-box">
       <%= l.label :state %>
-      <%= l.select :state_acronym, CS.states(:br).map { |key, value| [value, key] }, { prompt: true }  %>
+      <%= l.select :state_acronym, CS.states(:br).map { |key, value| [value, key] }, { include_blank: true }, class: 'state-select'  %>
     </div>
 
-    <div class="field">
+    <div class="field city-box">
       <%= l.label :city %>
-      <%= l.select :city_name, CS.cities(:sp).map { |value| [value, value] }, { prompt: true }  %>
+      <%= l.select :city_name, CS.cities(:sp, :br).map { |value| [value, value] }, { include_blank: true }, class: 'city-select'  %>
     </div>
   <% end %>
 
