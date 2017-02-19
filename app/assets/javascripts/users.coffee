@@ -16,6 +16,7 @@ user =
       stateSelect = $('.state-select')
       stateSelect.html('')
       $('.city-box').hide()
+      stateSelect.append "<option value=''>Bonvolu elekti</option>"
       for key, value of data
         stateSelect.append "<option value='#{key}'>#{value}</option>"
         $('.state-box').show()
@@ -24,6 +25,7 @@ user =
     $.get "/locales?country=#{country}&state=#{state}", (data) ->
       citySelect = $('.city-select')
       citySelect.html('')
+      citySelect.append "<option value=''>Bonvolu elekti</option>"
       for _, value of data
         citySelect.append "<option value='#{value}'>#{value}</option>"
         $('.city-box').show()

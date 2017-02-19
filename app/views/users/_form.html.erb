@@ -52,14 +52,14 @@
       <%= l.select :country_acronym, CS.countries.map { |key, value| [value, key] }, { prompt: true }, class: 'country-select'  %>
     </div>
 
-    <div class="field state-box">
+    <div class="field state-box" style="<%='display: none' if l.object.state_acronym.nil? %>">
       <%= l.label :state %>
-      <%= l.select :state_acronym, CS.states(:br).map { |key, value| [value, key] }, { include_blank: true }, class: 'state-select'  %>
+      <%= l.select :state_acronym, CS.states(l.object.country_acronym).map { |key, value| [value, key] }, { prompt: true }, class: 'state-select'  %>
     </div>
 
-    <div class="field city-box">
+    <div class="field city-box" style="<%='display: none' if l.object.city_name.nil? %>">
       <%= l.label :city %>
-      <%= l.select :city_name, CS.cities(:sp, :br).map { |value| [value, value] }, { include_blank: true }, class: 'city-select'  %>
+      <%= l.select :city_name, CS.cities(l.object.state_acronym, l.object.country_acronym).map { |value| [value, value] }, { prompt: true }, class: 'city-select'  %>
     </div>
   <% end %>
 
