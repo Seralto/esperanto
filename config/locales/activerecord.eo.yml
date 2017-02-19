@@ -11,6 +11,7 @@ eo:
         gender: Sekso
         email: Retpoŝto
         password: Pasvorto
+        password_confirmation: Pasvorto Konfirmo
         level: Nivelo
         share_information: Dividi Informon
       locale:
