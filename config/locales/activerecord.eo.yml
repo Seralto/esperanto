@@ -1,0 +1,21 @@
+eo:
+  activerecord:
+    models:
+      user: Uzanto
+      locale: loko
+
+    attributes:
+      user:
+        name: Nomo
+        birthdate: Naskiĝitago
+        gender: Sekso
+        email: Retpoŝto
+        password: Pasvorto
+        level: Nivelo
+        share_information: Dividi Informon
+      locale:
+        country_acronym: Lando
+        state_acronym: Stado
+        city_name: Urbo
+        locale_type: Lokaĵaro Tipo
+        user_id: Uzanto
