@@ -1,0 +1,27 @@
+<h1>Esperantistoj de la Mondo</h1>
+
+<p>
+  Kiom esperantistoj havas en la mondo?<br>
+  Ni ĉiuj volas scii!<br>
+  Registriĝu kaj partprenu el ĉi tiu konunumo.
+</p>
+
+<p>
+  <b>Sekso</b><br>
+  Viro: <%= @users.where(gender: :maskla).map(&:gender).size %><br>
+  Virino: <%= @users.where(gender: :ina).map(&:gender).size %><br>
+  Alia: <%= @users.where(gender: :alia).map(&:gender).size %>
+</p>
+
+<p>
+  <b>Flueco</b><br>
+  Baza: <%= @users.where(level: :baza).size %><br>
+  Meza: <%= @users.where(level: :meza).size %><br>
+  Progresinta: <%= @users.where(level: :progresinta).size %><br>
+  Flua: <%= @users.where(level: :flua).size %> %>
+</p>
+
+<!-- <p>
+  <b>Landoj</b><br>
+  <%#= @users.map(&:locales).flatten.map(&:country_acronym) %><br>
+</p> -->
