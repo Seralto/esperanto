@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'turbolinks:load', ->
   $('.country-select').change ->
     country = $(this).val()
     user.changeState(country)
@@ -8,7 +8,6 @@ $ ->
     state = $(this).val()
     user.changeCity(country, state)
 
-$(document).on 'turbolinks:load', ->
   $('.datepicker').datepicker({ changeMonth: true, changeYear: true, yearRange: "-100:-5" });
 
 user =
