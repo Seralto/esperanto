@@ -3,11 +3,13 @@ $ ->
     country = $(this).val()
     user.changeState(country)
 
-
   $('.state-select').change ->
     country = $('.country-select').val()
     state = $(this).val()
     user.changeCity(country, state)
+
+$(document).on 'turbolinks:load', ->
+  $('.datepicker').datepicker()
 
 user =
   changeState: (country) ->
