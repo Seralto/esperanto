@@ -9,7 +9,7 @@ $ ->
     user.changeCity(country, state)
 
 $(document).on 'turbolinks:load', ->
-  $('.datepicker').datepicker()
+  $('.datepicker').datepicker({ changeMonth: true, changeYear: true, yearRange: "-100:-5" });
 
 user =
   changeState: (country) ->
